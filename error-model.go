@@ -25,10 +25,6 @@ func (te Error) StatusCode() StatusCode {
 	return te.code
 }
 
-func (te Error) StatusMessage() string {
-	return statusMessage[te.code]
-}
-
 func Errorf(err error, format string, a ...interface{}) error {
 	a = append(a, err)
 	newErr := fmt.Errorf(format+": %v", a...)
