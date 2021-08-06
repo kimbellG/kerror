@@ -1,4 +1,4 @@
-package trnmnterr
+package kerror
 
 type StatusCode int
 

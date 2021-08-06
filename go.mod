@@ -1,4 +1,4 @@
-module github.com/kimbellG/trnmnterr
+module github.com/kimbellG/kerror
 
 go 1.16
 
