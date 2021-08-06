@@ -39,8 +39,8 @@ func TestErrorf(t *testing.T) {
 			assert := assert.New(t)
 			got := Errorf(tc.startErr, tc.format, tc.arg...)
 			trmt := TrnmntError{}
-			assert.Equal(errors.As(got, &trmt), tc.isTrnmtError, "assert tournament and default error")
-			assert.Equal(got.Error(), tc.want, "error message should be equal")
+			assert.Equal(tc.isTrnmtError, errors.As(got, &trmt), "assert tournament and default error")
+			assert.Equal(tc.want, got.Error(), "error message should be equal")
 		})
 
 	}
