@@ -26,14 +26,7 @@ func (te TrnmntError) StatusCode() StatusCode {
 }
 
 func (te TrnmntError) StatusMessage() string {
-	switch te.code {
-	case InvalidId:
-		return "invalid element's id"
-	case NotFound:
-		return "element not found"
-	}
-
-	panic(fmt.Sprintf("incorrect error status code: %d, err: %v", te.code, te.err))
+	return statusMessage[te.code]
 }
 
 func Errorf(err error, format string, a ...interface{}) error {
