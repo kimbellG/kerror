@@ -6,4 +6,5 @@ const (
 	InvalidID StatusCode = iota
 	NotFound
 	BadRequest
+	IntervalServerError
 )
