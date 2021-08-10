@@ -17,6 +17,10 @@ func New(err error, code StatusCode) error {
 	}
 }
 
+func Newf(code StatusCode, format string, args ...interface{}) error {
+	return New(fmt.Errorf(format, args...), code)
+}
+
 func (te Error) Error() string {
 	return te.err.Error()
 }
