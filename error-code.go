@@ -13,4 +13,8 @@ const (
 	SQLConstraintError
 	SQLScanError
 	SQLExecutionError
+
+	SQLTransactionBeginError
+	SQLTransactionRoolbackError
+	SQLTransactionCommitError
 )
