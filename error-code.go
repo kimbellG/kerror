@@ -7,4 +7,10 @@ const (
 	NotFound
 	BadRequest
 	IntervalServerError
+	TournamentDoesntExists
+
+	SQLPrepareStatementError
+	SQLConstraintError
+	SQLScanError
+	SQLExecutionError
 )
