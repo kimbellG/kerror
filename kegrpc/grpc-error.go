@@ -31,7 +31,7 @@ func Errorf(err error, format string, args ...interface{}) error {
 	args = append(args, err)
 
 	if trnt := (kerror.Error{}); errors.As(err, &trnt) {
-		return Newf(trnt.StatusCode, format+": %v", args...)
+		return Newf(trnt.StatusCode(), format+": %v", args...)
 	}
 
 	return status.Errorf(codes.Unknown, format+": %v", args...)
