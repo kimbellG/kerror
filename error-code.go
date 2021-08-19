@@ -6,17 +6,22 @@ const (
 	InvalidID StatusCode = iota
 	NotFound
 	BadRequest
-	IntervalServerError
+	InternalServerError
 
 	TournamentDoesntExists
 	UserDoesntExists
 
-	SQLPrepareStatementError
 	SQLConstraintError
+
+	SQLQueryError
+	SQLPrepareStatementError
 	SQLScanError
 	SQLExecutionError
 
+	SQLTransactionError
 	SQLTransactionBeginError
 	SQLTransactionRoolbackError
 	SQLTransactionCommitError
+
+	Unknown
 )

@@ -8,16 +8,18 @@ import (
 	"google.golang.org/grpc/status"
 )
 
-var grpcDict = map[kerror.StatusCode]codes.Code{
+var keToGrpcDict = map[kerror.StatusCode]codes.Code{
 	kerror.InvalidID:                   codes.InvalidArgument,
-	kerror.NotFound:                    codes.NotFound,
 	kerror.BadRequest:                  codes.InvalidArgument,
+	kerror.NotFound:                    codes.NotFound,
 	kerror.TournamentDoesntExists:      codes.NotFound,
 	kerror.UserDoesntExists:            codes.NotFound,
-	kerror.SQLPrepareStatementError:    codes.Internal,
 	kerror.SQLConstraintError:          codes.FailedPrecondition,
+	kerror.SQLQueryError:               codes.Internal,
+	kerror.SQLPrepareStatementError:    codes.Internal,
 	kerror.SQLScanError:                codes.Internal,
 	kerror.SQLExecutionError:           codes.Internal,
+	kerror.SQLTransactionError:         codes.Aborted,
 	kerror.SQLTransactionBeginError:    codes.Aborted,
 	kerror.SQLTransactionRoolbackError: codes.Aborted,
 	kerror.SQLTransactionCommitError:   codes.Aborted,
